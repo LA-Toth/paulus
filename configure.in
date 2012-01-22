@@ -1,0 +1,34 @@
+AC_INIT(paulus, [0,1],)
+
+PACKAGE=paulus
+VERSION=0.1.0
+
+# We want an absolute path to the source-dir.
+case "$srcdir" in
+    /*)
+        top_srcdir=$srcdir
+        ;;
+    *)
+        oldsrcdir="$srcdir"
+        top_srcdir="`cd \"$srcdir\"; pwd`"
+        ;;
+esac
+
+AM_INIT_AUTOMAKE($PACKAGE, $VERSION)
+LT_INIT
+
+CXXFLAGS="${CXXFLAGS:+${CXXFLAGS} } -Werror -W -Wall -Wno-error=unused-parameter"
+
+CPPFLAGS="-I$top_srcdir/include -I$top_srcdir"
+
+AC_CONFIG_MACRO_DIR([m4])
+
+AM_CONFIG_HEADER(paulusconfig.h)
+AC_PROG_CXX
+
+AC_OUTPUT(
+Makefile
+src/Makefile
+tests/Makefile
+include/Makefile
+)
