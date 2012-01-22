@@ -1,0 +1,18 @@
+# Temporary files
+\#*
+*~
+*.swp
+*.swo
+*.orig
+*.rej
+
+# Autotools-generated files
+Makefile.in
+/configure
+/aclocal.m4
+/autom4te.cache
+/config.*
+/install-sh
+/ltmain.sh
+/m4/
+/missing
