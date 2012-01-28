@@ -21,6 +21,10 @@ CXXFLAGS="${CXXFLAGS:+${CXXFLAGS} } -Werror -W -Wall -Wno-error=unused-parameter
 
 CPPFLAGS="-I$top_srcdir/include -I$top_srcdir"
 
+# Hardcoded
+CPPFLAGS="$CPPFLAGS -I$ZWA_INSTALL_DIR/include"
+LDFLAGS="-L$ZWA_INSTALL_DIR/lib"
+
 AC_CONFIG_MACRO_DIR([m4])
 
 AM_CONFIG_HEADER(paulusconfig.h)
